@@ -3,104 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My 3D Portfolio</title>
-  <meta name="description" content="Portfolio of Nakshatra Soni, web developer." />
+  <title>Nakshatra Soni | Web Developer</title>
+  <meta name="description" content="Portfolio of Nakshatra Soni, web developer building full-stack projects with Node.js, Express and MongoDB." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script type="importmap">
-  {
-    "imports": {
-      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
-    }
-  }
+  { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
   </script>
 </head>
 <body>
-  <canvas id="bg"></canvas>
+  <div class="loader" id="loader"><span id="count">00</span></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="grain"></div>
 
   <header class="nav">
-    <div class="logo">NS</div>
+    <a href="#top" class="logo">NS<span>.</span></a>
     <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
+      <a href="#work">Work</a>
       <a href="#skills">Skills</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
+    <span class="clock mono" id="clock"></span>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
-      <p class="tag">Hi, I'm</p>
-      <h1>Nakshatra Soni</h1>
-      <h2><span id="typed"></span><span class="cursor">|</span></h2>
-      <p class="lead">I build fast, good-looking things for the web.</p>
-      <div class="buttons">
-        <a class="btn primary" href="#projects">View my work</a>
-        <a class="btn" href="#contact">Get in touch</a>
+      <canvas id="bg"></canvas>
+      <div class="hero-text">
+        <p class="eyebrow mono">Web developer &mdash; India</p>
+        <h1>
+          <span class="line"><span>Nakshatra</span></span>
+          <span class="line"><span>Soni<em>.</em></span></span>
+        </h1>
+        <p class="hero-sub" data-reveal>I design and build full-stack web products, from shopping experiences to art marketplaces.</p>
       </div>
+      <div class="scroll-cue mono">Scroll</div>
     </section>
 
-    <section id="about" class="panel reveal">
-      <h3>About me</h3>
-      <p>
-        I'm Nakshatra Soni, a web developer building full-stack projects with Node.js, Express, and MongoDB. I like shipping real features, from e-commerce flows to art marketplaces, and I'm currently working on several projects in progress.
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Three.js</span><span>Tailwind CSS</span><span>JavaScript</span>
+        <span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Three.js</span><span>Tailwind CSS</span><span>JavaScript</span>
+      </div>
+    </div>
+
+    <section class="about" id="about">
+      <p class="label mono" data-reveal>01 &mdash; About</p>
+      <p class="about-text" id="aboutText">
+        I build web products that feel fast and look deliberate. Right now I am working on an e-commerce store, an artist marketplace with auctions, and a media request app, all still in progress.
       </p>
     </section>
 
-    <section id="projects" class="reveal">
-      <h3>Projects</h3>
-      <div class="grid">
-        <article class="card tilt">
-          <div class="card-inner">
-            <span class="status">In progress</span>
-            <h4>The Bread Basket</h4>
-            <p>An e-commerce website with a seamless shopping experience and dynamic functionality, backed by efficient database management.</p>
-            <div class="chips"><span>Node.js</span><span>Express.js</span><span>MongoDB</span></div>
-            <a href="https://github.com/IWantGnosis/TheBreadBasket" target="_blank" rel="noopener">Code &rarr;</a>
-          </div>
-        </article>
-        <article class="card tilt">
-          <div class="card-inner">
-            <span class="status">In progress</span>
-            <h4>Hue Horizon</h4>
-            <p>A platform where artists upload, showcase, and sell artworks, with auctions, a user-driven marketplace, and admin moderation.</p>
-            <div class="chips"><span>Node.js</span><span>Tailwind CSS</span></div>
-            <a href="https://github.com/IWantGnosis/Hue-Horizon" target="_blank" rel="noopener">Code &rarr;</a>
-          </div>
-        </article>
-        <article class="card tilt">
-          <div class="card-inner">
-            <span class="status">In progress</span>
-            <h4>Seerr</h4>
-            <p>A media request web app under active development (MIT licensed).</p>
-            <div class="chips"><span>Web App</span><span>MIT</span></div>
-            <a href="https://github.com/IWantGnosis/seerr-develop" target="_blank" rel="noopener">Code &rarr;</a>
-          </div>
-        </article>
+    <section class="work" id="work">
+      <div class="section-head">
+        <p class="label mono" data-reveal>02 &mdash; Selected work</p>
+        <h2 data-reveal>Projects</h2>
+      </div>
+
+      <a class="work-row" href="https://github.com/IWantGnosis/TheBreadBasket" target="_blank" rel="noopener" data-color="#ffb84d" data-reveal>
+        <span class="idx mono">01</span>
+        <span class="title">The Bread Basket</span>
+        <span class="tags mono">Node.js / Express / MongoDB</span>
+        <span class="status mono">In progress</span>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="work-row" href="https://github.com/IWantGnosis/Hue-Horizon" target="_blank" rel="noopener" data-color="#d4ff3a" data-reveal>
+        <span class="idx mono">02</span>
+        <span class="title">Hue Horizon</span>
+        <span class="tags mono">Node.js / Tailwind CSS</span>
+        <span class="status mono">In progress</span>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="work-row" href="https://github.com/IWantGnosis/seerr-develop" target="_blank" rel="noopener" data-color="#6ee7ff" data-reveal>
+        <span class="idx mono">03</span>
+        <span class="title">Seerr</span>
+        <span class="tags mono">Web app / MIT</span>
+        <span class="status mono">In progress</span>
+        <span class="arrow">&nearr;</span>
+      </a>
+
+      <div class="preview" id="preview">
+        <div class="preview-inner"></div>
+        <span class="mono" id="previewLabel"></span>
       </div>
     </section>
 
-    <section id="skills" class="panel reveal">
-      <h3>Skills</h3>
-      <div class="chips big">
-        <span>JavaScript</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span>
-        <span>Tailwind CSS</span><span>HTML</span><span>CSS</span><span>Three.js</span><span>Git</span>
+    <section class="skills" id="skills">
+      <div class="section-head">
+        <p class="label mono" data-reveal>03 &mdash; Skills</p>
+        <h2 data-reveal>Toolkit</h2>
+      </div>
+      <div class="skill-grid">
+        <div class="skill" data-reveal><span class="mono">01</span><h3>JavaScript</h3><p>ES6+, DOM, async code</p></div>
+        <div class="skill" data-reveal><span class="mono">02</span><h3>Node.js</h3><p>Servers, APIs, tooling</p></div>
+        <div class="skill" data-reveal><span class="mono">03</span><h3>Express.js</h3><p>Routing, middleware, REST</p></div>
+        <div class="skill" data-reveal><span class="mono">04</span><h3>MongoDB</h3><p>Data models and queries</p></div>
+        <div class="skill" data-reveal><span class="mono">05</span><h3>HTML &amp; CSS</h3><p>Semantic markup, layout, motion</p></div>
+        <div class="skill" data-reveal><span class="mono">06</span><h3>Tailwind CSS</h3><p>Utility-first UI systems</p></div>
+        <div class="skill" data-reveal><span class="mono">07</span><h3>Three.js</h3><p>Interactive 3D on the web</p></div>
+        <div class="skill" data-reveal><span class="mono">08</span><h3>Git &amp; GitHub</h3><p>Version control, deployment</p></div>
       </div>
     </section>
 
-    <section id="contact" class="reveal">
-      <h3>Contact</h3>
-      <p>Want to work together? Say hello.</p>
-      <div class="buttons center">
-        <a class="btn primary" href="mailto:nakshsoni2006@gmail.com">nakshsoni2006@gmail.com</a>
-        <a class="btn" href="https://www.linkedin.com/in/nakshatra-soni" target="_blank" rel="noopener">LinkedIn</a>
+    <section class="contact" id="contact">
+      <p class="label mono" data-reveal>04 &mdash; Contact</p>
+      <h2 class="big" data-reveal>Let's build<br/>something.</h2>
+      <a class="mail" href="mailto:nakshsoni2006@gmail.com" data-reveal>nakshsoni2006@gmail.com</a>
+      <div class="socials mono" data-reveal>
+        <a href="https://www.linkedin.com/in/nakshatra-soni" target="_blank" rel="noopener">LinkedIn &nearr;</a>
+        <a href="https://github.com/IWantGnosis" target="_blank" rel="noopener">GitHub &nearr;</a>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Nakshatra Soni. Built with Three.js.</p>
+  <footer class="footer mono">
+    <span>&copy; <span id="year"></span> Nakshatra Soni</span>
+    <span>Built with Three.js &amp; GSAP</span>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script type="module" src="script.js"></script>
 </body>
 </html>
