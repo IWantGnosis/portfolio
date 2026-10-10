@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My 3D Portfolio</title>
+  <meta name="description" content="Portfolio of Nakshatra Soni, web developer." />
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+
+  <header class="nav">
+    <div class="logo">NS</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="tag">Hi, I'm</p>
+      <h1>Nakshatra Soni</h1>
+      <h2><span id="typed"></span><span class="cursor">|</span></h2>
+      <p class="lead">I build fast, good-looking things for the web.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#projects">View my work</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </section>
+
+    <section id="about" class="panel reveal">
+      <h3>About me</h3>
+      <p>
+        I'm Nakshatra Soni, a web developer building full-stack projects with Node.js, Express, and MongoDB. I like shipping real features, from e-commerce flows to art marketplaces, and I'm currently working on several projects in progress.
+      </p>
+    </section>
+
+    <section id="projects" class="reveal">
+      <h3>Projects</h3>
+      <div class="grid">
+        <article class="card tilt">
+          <div class="card-inner">
+            <span class="status">In progress</span>
+            <h4>The Bread Basket</h4>
+            <p>An e-commerce website with a seamless shopping experience and dynamic functionality, backed by efficient database management.</p>
+            <div class="chips"><span>Node.js</span><span>Express.js</span><span>MongoDB</span></div>
+            <a href="https://github.com/IWantGnosis/TheBreadBasket" target="_blank" rel="noopener">Code &rarr;</a>
+          </div>
+        </article>
+        <article class="card tilt">
+          <div class="card-inner">
+            <span class="status">In progress</span>
+            <h4>Hue Horizon</h4>
+            <p>A platform where artists upload, showcase, and sell artworks, with auctions, a user-driven marketplace, and admin moderation.</p>
+            <div class="chips"><span>Node.js</span><span>Tailwind CSS</span></div>
+            <a href="https://github.com/IWantGnosis/Hue-Horizon" target="_blank" rel="noopener">Code &rarr;</a>
+          </div>
+        </article>
+        <article class="card tilt">
+          <div class="card-inner">
+            <span class="status">In progress</span>
+            <h4>Seerr</h4>
+            <p>A media request web app under active development (MIT licensed).</p>
+            <div class="chips"><span>Web App</span><span>MIT</span></div>
+            <a href="https://github.com/IWantGnosis/seerr-develop" target="_blank" rel="noopener">Code &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="panel reveal">
+      <h3>Skills</h3>
+      <div class="chips big">
+        <span>JavaScript</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span>
+        <span>Tailwind CSS</span><span>HTML</span><span>CSS</span><span>Three.js</span><span>Git</span>
+      </div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <h3>Contact</h3>
+      <p>Want to work together? Say hello.</p>
+      <div class="buttons center">
+        <a class="btn primary" href="mailto:nakshsoni2006@gmail.com">nakshsoni2006@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/nakshatra-soni" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Nakshatra Soni. Built with Three.js.</p>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
